@@ -1,13 +1,17 @@
 import binascii
 
+toki_pona_wordlist = [
+    "li", "e", "mi", "ni",
+    "jan", "toki", "pona", "pi",
+    "la", "tawa", "lon", "ala",
+    "sina", "ona", "mute", "tenpo"
+]
 
-def pngtohex(filename):
-    with open(filename, 'rb') as f:
-        content = f.read()
-    return binascii.hexlify(content).decode()
 
 def main():
-    png = input("enter filename: ")
-    print(pngtohex(png))
+    path = input("enter filename: ")
+    with open(path, 'rb') as f:
+        png = f.read()
+    tohex = binascii.hexlify(png).decode()
 
 main()
